@@ -17,5 +17,6 @@ public class RegularCustomer extends Customer {
     public String createMail() {
         return "Regular Customer";
     }
-    
+
 }
+

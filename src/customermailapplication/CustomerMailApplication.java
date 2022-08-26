@@ -8,13 +8,13 @@ package customermailapplication;
 
 import java.util.Scanner;
 
-/**
+/*
  *
  * @author sarun
  */
 public class CustomerMailApplication {
 
-    /**
+    /*
      * @param args the command line arguments
      */
     private Customer customer;
@@ -24,13 +24,19 @@ public class CustomerMailApplication {
                 customer = new RegularCustomer();
                 break;
             //complete MountainCustomer
+            case "Mountain":
+                customer = new MountainCustomer();
+                break;
             //complete DelinquentCustomer 
+            case "Delinquent":
+                customer = new DelinquentCustomer();
+                break;
         }
     }
     public String generateMail() {
         return customer.createMail();
     }
-    
+
     public static void main(String[] args) {
         CustomerMailApplication app = new CustomerMailApplication();
         Scanner inp = new Scanner(System.in);
@@ -46,8 +52,8 @@ public class CustomerMailApplication {
             case 3:
                 app.getCustomerTypeFromUser("Delinquent");
                 break;
-            
+
         }
-        System.out.println(app.generateMail());        
+        System.out.println(app.generateMail());
     }
 }
